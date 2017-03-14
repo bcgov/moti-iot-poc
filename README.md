@@ -26,7 +26,7 @@ The image below shows the architecture of the MOTI IoT PoC environment.
 
 <img src="images/demo-iot-architecture.png" alt="" width="70%" >
 
-##IoT Platform
+## IoT Platform
 
 The central component of the architecture is the instance of [Eclipse Kapua](https://projects.eclipse.org/projects/iot.kapua) running on the BC Government OpenShift Container Platform.  Kapua includes:
 
