@@ -6,7 +6,7 @@ The [MOTI IoT Challenge](https://github.com/bcgov/moti-iot-challenges) is a sibl
 
 This repo contains the technical components of the MOTI IoT Proof of Concept. The approach, architecture and roadmap to the technical elements of the PoC are in this document. The rest of the repo is the software created, built and deployed to create the PoC. This repo is intended to be used as the basis for the BCIC/MOTI IoT Challenge collaborations, with selectees forking this repo and submitting pull requests to extend the PoC to meet the goals of the five IoT Challenges.
 
-#MOTI's IoT Proof-of-Concept (PoC) Approach
+# MOTI's IoT Proof-of-Concept (PoC) Approach
 
 
 The MOTI IoT PoC contained within this github repo is a technical spike for getting started creating a modern IoT capability at MOTI. The idea is for MOTI to build the PoC by:
@@ -20,7 +20,7 @@ The result is very deliberately named a "Proof-of-Concept" - an [Agile Technolog
 
 The outcome of the PoC spike was demonstrated at the [BC Innovation Council's (BCIC) IoT Industry Day](http://bcic.ca/events/iot-discovery-day/).
 
-#The PoC Architecture
+# The PoC Architecture
 
 The image below shows the architecture of the MOTI IoT PoC environment.
 
@@ -37,11 +37,11 @@ The central component of the architecture is the instance of [Eclipse Kapua](htt
 
 See [MOTI's Eclipse Kapua Fork](https://github.com/bcgov/kapua).
 
-##IoT Sensor Emulation and Gateway
+## IoT Sensor Emulation and Gateway
 
 An implementation of an [Eclipse Kura](http://www.eclipse.org/kura/) MQTT client emulator feeds data into Kapua. The PoC sources data from several sources - primarily a source of DriveBC images and sensor data from a Weather Station Data Logger.  The Weather Station Data Logger is an example of a sensor aggregator - periodically delivering data such as temperature, precipitation, frost depth, barometric pressure and other weather related metrics from a single location. In the future implementation, we anticipate that weather logger data will connect to the centralized platform via a Smart Gateway Device - a device capable of delivering data using an industry-standard protocol (such as MQTT) and capable of being remotely managed from the central platform for monitoring, restarts, firmware upgrades and so on.
 
-##IoT Application Data Collection
+## IoT Application Data Collection
 
 For output - processing data delivered to the central platform - the PoC implements a [.NET Core](https://dotnet.github.io/) instance of an MQTT client that registers itself with Kapua as a data subscriber. The Client subscribes to a set of devices, and data received by Kapua from those devices are automatically published to the client. The client is simple, taking data received from Kapua and inserting the values into tables in a Postgres Database.  This emulates a domain specific backend configured to monitor a set of sensors and collect the data for subsequent processing. The client service could be expanded to support a number of cross-cutting purposes - data exception detection/notifications, data quality assessment/filtering and so on.
 
@@ -49,6 +49,6 @@ There is a range of possible data stores that might be appropriate based on the 
 
 To make the collected, domain-specific data for the PoC available for presentment, a .NET Core service was implemented to provides an API to return data recently pushed into the Postgres database. The exposed API (built using [Swagger](http://swagger.io/)) is an example of an API that might be protected and used internally within MOTI or made available publicly to enable private sector uses.
 
-##IoT Application Visualization
+## IoT Application Visualization
 
 To complete the PoC - enabling direct access to select sensor data for staff and citizens - the Application API was used by an instance of the [Freeboard IoT Dashboard](https://freeboard.io/) to make the data available for the intended data consumers. Various widgets and data configurations are used to present different types of data in useful forms.
