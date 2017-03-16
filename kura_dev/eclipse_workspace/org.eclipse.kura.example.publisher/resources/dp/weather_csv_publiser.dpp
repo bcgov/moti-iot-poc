@@ -1,0 +1,20 @@
+#Deployment Plugin Project File
+#Fri Mar 10 12:50:35 PST 2017
+build.ant.name=<.>/resources/dp/weather_csv_publiser_build.xml
+build.dp.file=<.>/resources/dp/weather_csv_publiser.dp
+build.location=
+bundles.0.bundle_path=<.>/.project
+bundles.0.customizer=false
+bundles.0.headers.count=0
+bundles.0.missing=false
+bundles.0.name=bundles/org.eclipse.kura.example.publisher_1.0.2.jar
+bundles.0.symbolic_name=org.eclipse.kura.example.publisher;singleton\:\=true
+bundles.0.version=1.0.2
+bundles.count=1
+certificates.count=0
+general.signbundles=false
+headers.other.headers=
+headers.symbolic.name=weather_csv_publiser
+headers.version=0.1.0
+resources.count=0
+

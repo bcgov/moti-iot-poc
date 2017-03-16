@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2011, 2016 Eurotech and/or its affiliates
+
+     All rights reserved. This program and the accompanying materials
+     are made available under the terms of the Eclipse Public License v1.0
+     which accompanies this distribution, and is available at
+     http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+      Eurotech
+
+-->
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+    <OCD id="org.eclipse.kura.example.publisher.ExamplePublisher"
+         name="ExamplePublisher" 
+         description="Example of a Configuring Kura Application.">
+        
+        <Icon resource="http://s3.amazonaws.com/kura-resources/application/icon/applications-other.png" size="32"/>
+        
+        <AD id="publish.rate"  
+            name="publish.rate"
+            type="Integer"
+            cardinality="0" 
+            required="true"
+            default="1000"
+            min="1"
+            description="Default message publishing rate in milliseconds (min 1)."/>
+            
+        <AD id="publish.qos"  
+            name="publish.qos"
+            type="Integer"
+            cardinality="0" 
+            required="true"
+            default="0" 
+            description="Default QoS to publish the messages with.">
+           <Option label="0 - At most once" value="0"/>
+           <Option label="1 - At least once" value="1"/>          
+           <Option label="2 - Exactly once" value="2"/>
+        </AD>
+
+        <AD id="publish.retain"  
+            name="publish.retain"
+            type="Boolean"
+            cardinality="0" 
+            required="true"
+            default="false" 
+            description="Default retaing flag for the published messages."/>
+        
+        <AD id="publish.appTopic"  
+            name="publish.appTopic"
+            type="String"
+            cardinality="0" 
+            required="true"
+            default="data/metrics" 
+            description="Default semantic topic to publish the metrics to."/>
+        
+        <AD id="dev.lat"  
+            name="dev.lat"
+            type="Float"
+            cardinality="0" 
+            required="true"
+            default="-123.365855"
+            min="-180.0"
+            max="180.0"
+            description="Device latitude (default 1012 Douglas)."/>
+        
+        <AD id="dev.long"  
+            name="dev.long"
+            type="Float"
+            cardinality="0" 
+            required="true"
+            default="48.424241"
+            min="-90.0"
+            max="90.0"
+            description="Device longitude (default 1012 Douglas)."/>
+        
+        <AD id="dev.csvPath"  
+            name="dev.csvPath"
+            type="String"
+            cardinality="0" 
+            required="true"
+            default="/opt/eclipse/kura/weather_demo.csv"
+            description="Where to get csv data."/>
+    </OCD>
+    <Designate pid="org.eclipse.kura.example.publisher.ExamplePublisher">
+        <Object ocdref="org.eclipse.kura.example.publisher.ExamplePublisher"/>
+    </Designate>
+</MetaData>
