@@ -1,0 +1,10 @@
+#!/bin/bash -e
+#
+# S2I run script for the 's2i-java' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+cd source /opt/app-root/src/source
+mvn -Dmaven.repo.local=/opt/app-root/src/.m2 exec:java

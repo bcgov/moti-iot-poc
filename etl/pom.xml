@@ -1,0 +1,265 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.moti.app</groupId>
+  <artifactId>java</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.0</version>
+  <name>maven</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>eclipse-kura</id>
+      <name>Eclipse Repo</name>
+      <url>https://repo.eclipse.org/content/repositories/kura</url>
+    </repository>
+
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>eclipse-paho</id>
+      <name>Eclipse Repo</name>
+      <url>https://repo.eclipse.org/content/repositories/paho</url>
+    </repository>
+
+  </repositories>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <configuration>
+          <mainClass>com.moti.app.IoT</mainClass>
+          <arguments>
+            <argument>argument1</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.1-901-1.jdbc4</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.24</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.24</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.api</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.camel</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.camel.cloud.factory</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.camel.xml</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.certificates</artifactId>
+      <version>1.0.3</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.cloud</artifactId>
+      <version>1.0.9</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.comm</artifactId>
+      <version>1.0.3</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.configuration</artifactId>
+      <version>1.0.9</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.crypto</artifactId>
+      <version>1.0.5</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.net</artifactId>
+      <version>1.0.10</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core.status</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.core</artifactId>
+      <version>1.0.10</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.deployment.agent</artifactId>
+      <version>1.0.7</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.clock</artifactId>
+      <version>1.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.gpio</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.net</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.position</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.usb</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.emulator.watchdog</artifactId>
+      <version>1.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.linux.bluetooth</artifactId>
+      <version>1.0.7</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.kura</groupId>
+      <artifactId>org.eclipse.kura.web2</artifactId>
+      <version>2.0.3</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.eclipse.kura</groupId>-->
+      <!--<artifactId>org.eclipse.kura.web</artifactId>-->
+      <!--<version>2.0.3</version>-->
+      <!--<scope>compile</scope>-->
+    <!--</dependency>-->
+
+    <dependency>
+      <groupId>org.eclipse.paho</groupId>
+      <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
